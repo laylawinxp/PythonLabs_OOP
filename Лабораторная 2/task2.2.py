@@ -28,7 +28,7 @@ class Library:
             self.books = books
 
     def get_next_book_id(self):
-        if self.books == []:
+        if not self.books:
             return 1
         else:
             return self.books[-1].id_ + 1
