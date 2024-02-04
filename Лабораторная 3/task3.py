@@ -63,8 +63,5 @@ class AudioBook(Book):
         else:
             self._duration = new_duration
 
-    def __str__(self):
-        return f"{super().__str__()} Продолжительность {self.duration}."
-
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, duration={self.duration})"
