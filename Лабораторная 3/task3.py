@@ -13,9 +13,6 @@ class Book:
     def author(self):
         return self._author
 
-    def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}"
-
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r})"
 
