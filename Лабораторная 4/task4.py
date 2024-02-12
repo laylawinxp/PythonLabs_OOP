@@ -11,7 +11,7 @@ class Property:
         :protected (т.к. нельзя снизить цену до желаемой) _price: Цена имущества (в рублях)
 
         Примеры:
-        >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560)  # инициализация экземпляра класса
+        # >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560)  # инициализация экземпляра класса
         """
         self._owner = owner
         self._price = price
@@ -62,7 +62,7 @@ class Property:
         """
         Возвращает строковое представление объекта
         """
-        return f"Владелец: {self._owner}. Цена: {self._price}"
+        return f"Владелец: {self._owner} Цена: {self._price}"
 
     def __repr__(self) -> str:
         """
@@ -78,8 +78,8 @@ class Property:
 
         Примеры:
 
-        >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560)
-        >>> my_property.reset_price()
+        # >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560)
+        # >>> my_property.reset_price()
         """
         self._price = 0
 
@@ -94,8 +94,8 @@ class Property:
 
         Примеры:
 
-        >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560.5)
-        >>> my_property.increase_price(100000.5)
+        # >>> my_property = Property("Кукушкина Ланиакея Дмитриевна", 2000560.5)
+        # >>> my_property.increase_price(100000.5)
         """
         if isinstance(additional_price, float):
             if additional_price > 0:
@@ -120,7 +120,7 @@ class Auto(Property):
         :public param brand: Марка автомобиля (название)
 
         Примеры:
-        >>> my_auto = Auto("Кукушкина Ланиакея Дмитриевна", 2000560, "audi")  # инициализация экземпляра класса
+        # >>> my_auto = Auto("Кукушкина Ланиакея Дмитриевна", 2000560, "audi")  # инициализация экземпляра класса
         """
         super().__init__(owner, price)
         self.brand = brand
@@ -210,11 +210,13 @@ class House(Property):
 
 
 if __name__ == "__main__":
-    auto = Auto("me", 3524345, "audi")
-    house = House("me", 231443.13, 7)
+    auto = Auto("Avdysheva P.G.", 3524345, "audi")
     print(auto)
-    auto.increase_price(5)
+    auto.increase_price(5.5)
     print(repr(auto))
+    house = House("Medvedev R.N.", 231443.13, 7)
     print(house)
     house.increase_price(4536.45)
     print(repr(house))
+    house.reset_price()
+    print(house)
